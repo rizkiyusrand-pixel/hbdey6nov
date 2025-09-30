@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulang Tahun Yasmin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+            padding: 15px;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Halaman Pertama */
+        #page1 {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: 100vh;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .left-section {
+            width: 100%;
+            background: linear-gradient(to bottom, #db2777, #be185d);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+            min-height: 40vh;
+        }
+
+        .photo-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 5px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(45deg, #f9a8d4, #f472b6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .welcome-text h1 {
+            font-size: 24px;
+            margin: 5px 0;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-text h1:first-child {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+        }
+
+        .right-section {
+            width: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+        }
+
+        .message {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .message p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #4c1d95;
+            background-color: rgba(252, 231, 243, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        button:hover {
+            background-color: #7c3aed;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.6);
+        }
+
+        .floating-item {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.7;
+            animation: float 6s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .floating-item:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .floating-item:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .floating-item:nth-child(3) {
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .floating-item:nth-child(4) {
+            bottom: 25%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(10deg);
+            }
+        }
+
+        /* Halaman Kedua */
+        #page2 {
+            display: none;
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cake-container {
+            margin: 15px 0;
+            font-size: 70px;
+            animation: bounce 2s infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1 {
+            color: #db2777;
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .photo-slider {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #f9a8d4, #f472b6);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #c4b5fd;
+            border-radius: 50%;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slider-dot.active {
+            background-color: #8b5cf6;
+        }
+
+        .letter-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+
+        .letter-container h2 {
+            color: #db2777;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .letter-container p {
+            line-height: 1.5;
+            color: #4c1d95;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .letter-container p:first-of-type {
+            font-weight: bold;
+        }
+
+        .letter-container p:last-of-type {
+            text-align: right;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .instagram-btn i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        .back-btn {
+            background-color: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-btn:hover {
+            background-color: #7c3aed;
+            transform: translateY(-2px);
+        }
+
+        .pink-ball {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #f9a8d4 0%, #f472b6 100%);
+            opacity: 0.6;
+            z-index: 1;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            opacity: 0.7;
+            z-index: 10;
+            animation: confetti-fall 5s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .music-player i {
+            font-size: 24px;
+            color: #db2777;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 768px) {
+            #page1 {
+                flex-direction: row;
+            }
+            
+            .left-section, .right-section {
+                width: 50%;
+                min-height: 100vh;
+            }
+            
+            .welcome-text h1 {
+                font-size: 32px;
+            }
+            
+            .welcome-text h1:first-child {
+                font-size: 40px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .photo-slider {
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Halaman Pertama -->
+        <div id="page1">
+            <div class="left-section">
+                <div class="photo-container">
+                    <div class="photo"></div>
+                </div>
+                <div class="welcome-text">
+                    <h1>Selamat Datang</h1>
+                    <h1>Adek Yasmin</h1>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="floating-item">🎂</div>
+                <div class="floating-item">🎁</div>
+                <div class="floating-item">🎈</div>
+                <div class="floating-item">🎀</div>
+                <div class="floating-item">🍵</div>
+                <div class="message">
+                    <p>Selamat ulang tahun anak cantik dan imutt! Semoga rezekinya menumpuk dan kesehatannya semakin bagus. Diberi ilmu yang lebih untuk lulus PTN pada suatu hari nanti, aamiin ya! 💖</p>
+                </div>
+                <button id="birthdayBtn">Buka Kejutan</button>
+            </div>
+        </div>
+
+        <!-- Halaman Kedua -->
+        <div id="page2">
+            <div class="cake-container">
+                🍵🎂🍵
+            </div>
+            <h1>Selamat Ulang Tahun Yasmin!</h1>
+            
+            <div class="photo-slider">
+                <div class="slider-container">
+                    <!-- Ganti bagian ini dengan foto-foto Yasmin -->
+                    <div class="slide">
+                        <img src="" alt="Yasmin 💕">
+                    </div>
+                    <div class="slide">
+                        <img src="foto2.jpg" alt="Yasmin 🌸">
+                    </div>
+                    <div class="slide">
+                        <img src="foto3.jpg" alt="Yasmin 🎀">
+                    </div>
+                    <div class="slide">
+                        <img src="foto4.jpg" alt="Yasmin 🌺">
+                    </div>
+                    <div class="slide">
+                        <img src="foto5.jpg" alt="Yasmin 🌷">
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+
+            <div class="letter-container">
+                <h2>for jsmnessch imut nan gemesh cantik</h2>
+                <p>~jsmnessch~</p>
+                <p>Happy Birthday yaaaa🎂🍵🥳<p>
+                <p>cieee nambahh satuu umurnyaaa. semoga cita cita yasminn 
+                    untuk lulus ptn nanti tercapaii yaa dengan usaha dan doa 
+                    yasmiinnn semogaa Yasmin diberii kesehatan yang lebihhh biar
+                     semangaat belajar yasmiinnn untuk masuk ptn nantiii and ingett
+                      yaa yasmin ituu terbaikk ga ada yang bisa
+                     rajin seperti Yasmin ga ada yang bisa sekonsisten yasminn kegiatannyaaa,dewa 
+                     salutt bangett sama yasminnn aslii rill no fek fekkk takk boongggg daweee…</p>
+
+                    <p>yasminn jangan sering begadangg gadangg yaaa,yasminn haruss bisa jaga pola hidup
+                     yasminn biar sehatt,,,dewa tau kok yasmin lagi fokus banget buat masuk PTN dewa percaya 
+                     banget yasmin bakal bisa lulus karna yasmin itu anaknya pintar,rajinn dann ga gampang 
+                     menyerahhh,jadi jangan pernah ragu sama kemampuan yasmin sendiri yaaa karena hasil kerja keras
+                      yasmin bakal kebayarr manisssssssssssweatt….</p>
+
+                   <p> dewaa selaluuu support yasmiiinnn mauuu segimanapuuunnn dimata dewa yasminn terbaiikkk yasminn 
+                    kuat menghadapii masalah sebesar sekecill apapun yasmin bisa lewatiiinn jujur dewa salut bangett
+                     punya temen cewee cantikkk lucuu imutt gemeshhh namanyaa Yasmin awalia syahputri  punya tujuan 
+                     positiff dann perempuan yang paling dewa kagumiiiin</p>
+
+                   <p> Happy Birthdayyyy yaaaa anakk cantikkkk semogaaa sehat selaluuu rezekii diamalkannnn 
+                    yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa🎂🥳🥳🥳🥳🥳</p>
+                <p>Dibaca ya dek KETIKAN GUWE awas kalo ga dibaca😡😡 </p>
+                <p>(~DewaDEWOT~) 💝</p>
+            </div>
+            
+            <a href="https://www.instagram.com/jsmnessch/?utm_source=ig_web_button_share_sheet" class="instagram-btn">
+                <i class="fab fa-instagram"></i> jsmnessch
+            </a>
+
+             <a href="https://www.instagram.com/yazminewleowleo/?utm_source=ig_web_button_share_sheet" class="instagram-btn">
+                <i class="fab fa-instagram"></i> yazminewleowleo
+            </a>
+            
+            <br>
+            <button class="back-btn" id="backBtn">Kembali</button>
+        </div>
+    </div>
+
+    <div class="music-player" id="musicToggle">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <audio id="birthdaySong" loop>
+        <source src="Kasih - Aera.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const birthdayBtn = document.getElementById('birthdayBtn');
+            const backBtn = document.getElementById('backBtn');
+            const page1 = document.getElementById('page1');
+            const page2 = document.getElementById('page2');
+            const musicToggle = document.getElementById('musicToggle');
+            const birthdaySong = document.getElementById('birthdaySong');
+            let isPlaying = false;
+            
+            // Slider functionality
+            const sliderContainer = document.querySelector('.slider-container');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            // Fungsi untuk mengubah slide
+            function goToSlide(n) {
+                currentSlide = n;
+                sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // Memulai slider otomatis
+            function startSlider() {
+                slideInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    goToSlide(currentSlide);
+                }, 3000);
+            }
+            
+            // Menghentikan slider
+            function stopSlider() {
+                clearInterval(slideInterval);
+            }
+            
+            // Event listener untuk dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    stopSlider();
+                    goToSlide(index);
+                    startSlider();
+                });
+            });
+            
+            // Tombol untuk pindah ke halaman kedua
+            birthdayBtn.addEventListener('click', function() {
+                page1.style.display = 'none';
+                page2.style.display = 'block';
+                
+                // Mulai slider
+                startSlider();
+                
+                // Tambahkan efek bola pink di background
+                createPinkBalls();
+                
+                // Tampilkan confetti
+                createConfetti();
+                
+                // Putar musik otomatis
+                playMusic();
+            });
+            
+            // Tombol untuk kembali ke halaman pertama
+            backBtn.addEventListener('click', function() {
+                page2.style.display = 'none';
+                page1.style.display = 'flex';
+                
+                // Hentikan slider
+                stopSlider();
+            });
+            
+            // Kontrol musik
+            musicToggle.addEventListener('click', function() {
+                if (isPlaying) {
+                    pauseMusic();
+                } else {
+                    playMusic();
+                }
+            });
+            
+            function playMusic() {
+                birthdaySong.play();
+                isPlaying = true;
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            
+            function pauseMusic() {
+                birthdaySong.pause();
+                isPlaying = false;
+                musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+            }
+            
+            // Fungsi untuk membuat efek bola pink di background halaman 2
+            function createPinkBalls() {
+                const page2Element = document.getElementById('page2');
+                
+                // Hapus bola yang sudah ada (jika ada)
+                const existingBalls = document.querySelectorAll('.pink-ball');
+                existingBalls.forEach(ball => ball.remove());
+                
+                // Buat bola-bola pink
+                for (let i = 0; i < 10; i++) {
+                    const ball = document.createElement('div');
+                    ball.className = 'pink-ball';
+                    
+                    // Ukuran acak
+                    const size = Math.random() * 60 + 30;
+                    ball.style.width = `${size}px`;
+                    ball.style.height = `${size}px`;
+                    
+                    // Posisi acak
+                    ball.style.left = `${Math.random() * 100}%`;
+                    ball.style.top = `${Math.random() * 100}%`;
+                    
+                    // Animasi
+                    ball.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                    ball.style.animationDelay = `${Math.random() * 5}s`;
+                    
+                    page2Element.appendChild(ball);
+                }
+            }
+            
+            // Fungsi untuk membuat confetti
+            function createConfetti() {
+                const confettiColors = ['#ff71ce', '#01cdfe', '#05ffa1', '#b967ff', '#fffb96'];
+                const symbols = ['🎉', '🎊', '🎁', '🎂', '🎀', '🌸', '💖'];
+                
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                    
+                    // Warna acak
+                    confetti.style.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                    
+                    // Posisi acak
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    
+                    // Animasi
+                    confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                    confetti.style.animationDelay = `${Math.random() * 2}s`;
+                    confetti.style.fontSize = `${Math.random() * 15 + 10}px`;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // Hapus confetti setelah selesai
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }
+            }
+            
+            // Tambahkan beberapa bola pink di background halaman 1 juga
+            function createPinkBallsPage1() {
+                const page1Element = document.getElementById('page1');
+                
+                for (let i = 0; i < 6; i++) {
+                    const ball = document.createElement('div');
+                    ball.className = 'pink-ball';
+                    
+                    // Ukuran acak
+                    const size = Math.random() * 50 + 20;
+                    ball.style.width = `${size}px`;
+                    ball.style.height = `${size}px`;
+                    
+                    // Posisi acak
+                    ball.style.left = `${Math.random() * 100}%`;
+                    ball.style.top = `${Math.random() * 100}%`;
+                    
+                    // Animasi
+                    ball.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                    ball.style.animationDelay = `${Math.random() * 5}s`;
+                    
+                    page1Element.appendChild(ball);
+                }
+            }
+            
+            // Jalankan fungsi untuk membuat bola pink di halaman 1
+            createPinkBallsPage1();
+        });
+    </script>
+</body>
+</html>
